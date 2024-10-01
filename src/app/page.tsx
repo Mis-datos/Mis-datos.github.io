@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { Grid2 as Grid, Typography } from "@mui/material";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <Grid container>
+      <Typography variant="h1">Sarasa</Typography>
+    </Grid>
   );
 }
