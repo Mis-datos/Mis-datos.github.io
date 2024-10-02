@@ -12,22 +12,14 @@ import {
   IconButton,
 } from "@mui/material";
 import {
-  Phone,
   Phone as PhoneIcon,
   WhatsApp as WhatsAppIcon,
 } from "@mui/icons-material";
 
 import theme from "../theme";
-import { callNumber, sendWhatsAppMessage } from "@/utils";
+import { numbers, callNumber, sendWhatsAppMessage } from "@/utils";
 import Image from "next/image";
 import avatar from "./avatar.png";
-
-const numbers = [
-  "+54 9 11 6408-1371",
-  "+54 9 11 6401-9957",
-  "+54 9 11 2760-3104",
-  "+54 9 11 3050-0069",
-];
 
 export default function Home() {
   return (
@@ -90,7 +82,7 @@ export default function Home() {
                             callNumber(number);
                           }}
                         >
-                          <Phone />
+                          <PhoneIcon />
                         </IconButton>
 
                         <IconButton
