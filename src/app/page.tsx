@@ -33,8 +33,15 @@ export default function Home() {
         </Stack>
 
         <Stack justifyContent="center" alignItems="center">
-          <Stack component={Paper} p={2} width="40%">
-            <Stack direction="row" alignItems="center">
+          <Stack
+            component={Paper}
+            p={2}
+            sx={{
+              width: "100%",
+              maxWidth: { xs: "90%", sm: "80%", md: "60%", lg: "40%" },
+            }}
+          >
+            <Stack direction={{ xs: "column", sm: "row" }} alignItems="center">
               <Image
                 src={avatar}
                 alt="avatar"
@@ -42,10 +49,12 @@ export default function Home() {
                 width={200}
                 style={{
                   borderRadius: "80%",
+                  maxWidth: "100%",
+                  height: "auto",
                 }}
               />
 
-              <Stack ml={2}>
+              <Stack ml={{ xs: 0, sm: 2 }} mt={{ xs: 2, sm: 0 }}>
                 <Typography variant="body1">
                   Hola, padezco de Alzheimer y diabetes tipo 2, por lo que
                   preciso de medicación por favor ayúdame a regresar a mi casa.
@@ -54,7 +63,7 @@ export default function Home() {
             </Stack>
 
             <Stack mt={4}>
-              <Typography variant="h5">Telefonos de contacto</Typography>
+              <Typography variant="h5">Teléfonos de contacto</Typography>
 
               <List
                 sx={{
@@ -63,9 +72,8 @@ export default function Home() {
                 }}
               >
                 {numbers.map((number, index) => (
-                  <Stack>
+                  <Stack key={number}>
                     <ListItem
-                      key={number}
                       alignItems="center"
                       style={{
                         justifyContent: "space-between",
